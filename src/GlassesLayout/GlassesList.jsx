@@ -1,28 +1,15 @@
 import React, { Component } from "react";
-import { glassesArr } from "./data";
+import GlassesItem from "./GlassesItem";
 
 export default class GlassesList extends Component {
-
   renderGlassesList = () => {
-    return glassesArr.map((item) => {
+    return this.props.glassesArr.map((item) => {
       return (
-        <a>
-          <img
-            className=""
-            style={{
-              height: "auto",
-              width: "30%",
-              objectFit: "cover",
-              scale: "0.7",
-            }}
-            src={item.imgJpg}
-            alt
-          />
-        </a>
+        <GlassesItem key={item.id} data={item} handelClickView={this.props.handelViewDetail} />
       );
     });
   };
   render() {
-    return <div className="divJpg m-5 ">{this.renderGlassesList()}</div>;
+    return <div className="divJpg m-5">{this.renderGlassesList()}</div>;
   }
 }

@@ -48,3 +48,7 @@
 .divJpg a {
   cursor: pointer;
 }
+
+.descText {
+  background: rgb(231 160 104);
+}
